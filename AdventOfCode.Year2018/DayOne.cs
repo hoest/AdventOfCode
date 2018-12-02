@@ -3,10 +3,20 @@
   using System.Linq;
 
   public class DayOne {
+    /// <summary>
+    /// Day 1 - Part 1
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public static int Calibrate(IEnumerable<int> numbers) {
       return numbers.Sum();
     }
 
+    /// <summary>
+    /// Day 1 - Part 2
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public static int FirstDuplicate(IEnumerable<int> numbers) {
       var numbersArr = numbers.ToArray();
       var currentFrequency = 0;
