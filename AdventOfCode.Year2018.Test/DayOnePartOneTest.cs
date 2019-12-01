@@ -1,6 +1,5 @@
 namespace AdventOfCode.Year2018.Test {
   using System;
-  using System.IO;
   using System.Linq;
 
   using Xunit;
@@ -10,9 +9,7 @@ namespace AdventOfCode.Year2018.Test {
     public void Solution() {
       const int Expected = 561;
 
-      var input = Resources.InputD1P1.Split(Environment.NewLine)
-        .Select(int.Parse)
-        .ToArray();
+      var input = Resources.InputD1P1.Split(Environment.NewLine).Select(int.Parse).ToArray();
       var actual = DayOne.Calibrate(input);
 
       Assert.Equal(Expected, actual);
