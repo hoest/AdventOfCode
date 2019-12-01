@@ -1,5 +1,6 @@
 ﻿namespace AdventOfCode.Year2019 {
   using System;
+  using System.Collections.Generic;
   using System.Linq;
 
   using AdventOfCode.Year2019.Utils;
@@ -63,7 +64,24 @@
     add them all up at the end.)
      */
     public void PartTwo() {
-      throw new NotImplementedException();
+      var solution = InputFiles.day_01_01.SplitLinesAsInt().Select(FuelWithFuel).Sum();
+      Console.WriteLine($@"D1P2: {solution:F0}");
+    }
+
+    public static int FuelWithFuel(int mass) {
+      int Result(int m) {
+        var f = FuelRequired(m);
+        return f > 0 ? f : 0;
+      }
+
+      IEnumerable<int> Loop(int m) {
+        var f = m;
+        while ((f = Result(f)) > 0) {
+          yield return f;
+        }
+      }
+
+      return Loop(mass).Sum();
     }
 
     public static int FuelRequired(int mass) {
