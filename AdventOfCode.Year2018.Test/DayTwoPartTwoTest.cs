@@ -1,5 +1,5 @@
 namespace AdventOfCode.Year2018.Test {
-  using System.IO;
+  using System;
   using System.Linq;
 
   using Xunit;
@@ -9,9 +9,7 @@ namespace AdventOfCode.Year2018.Test {
     public void Solution() {
       const string Expected = "ivjhcadokeltwgsfsmqwrbnuy";
 
-      var input = File.ReadAllLines(
-          "/Users/jelle/Development/Hoest/AdventOfCode/AdventOfCode.Year2018.Test/Resources/InputD2P1.txt")
-        .ToArray();
+      var input = Resources.InputD2P1.Split(Environment.NewLine).ToArray();
       var actual = DayTwo.CommonLetters(input);
 
       Assert.Equal(Expected, actual);

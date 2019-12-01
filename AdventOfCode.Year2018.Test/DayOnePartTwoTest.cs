@@ -1,5 +1,5 @@
 namespace AdventOfCode.Year2018.Test {
-  using System.IO;
+  using System;
   using System.Linq;
 
   using Xunit;
@@ -9,10 +9,7 @@ namespace AdventOfCode.Year2018.Test {
     public void Solution() {
       const int Expected = 563;
 
-      var input = File.ReadAllLines(
-          "/Users/jelle/Development/Hoest/AdventOfCode/AdventOfCode.Year2018.Test/Resources/InputD1P1.txt")
-        .Select(int.Parse)
-        .ToArray();
+      var input = Resources.InputD1P1.Split(Environment.NewLine).Select(int.Parse).ToArray();
       var actual = DayOne.FirstDuplicate(input);
 
       Assert.Equal(Expected, actual);

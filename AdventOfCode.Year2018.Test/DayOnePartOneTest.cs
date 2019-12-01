@@ -1,4 +1,5 @@
 namespace AdventOfCode.Year2018.Test {
+  using System;
   using System.IO;
   using System.Linq;
 
@@ -9,8 +10,7 @@ namespace AdventOfCode.Year2018.Test {
     public void Solution() {
       const int Expected = 561;
 
-      var input = File.ReadAllLines(
-          "/Users/jelle/Development/Hoest/AdventOfCode/AdventOfCode.Year2018.Test/Resources/InputD1P1.txt")
+      var input = Resources.InputD1P1.Split(Environment.NewLine)
         .Select(int.Parse)
         .ToArray();
       var actual = DayOne.Calibrate(input);
