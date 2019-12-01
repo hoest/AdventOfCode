@@ -19,15 +19,7 @@ namespace AdventOfCode.Year2018.Test {
 
     [Fact]
     public void Test1() {
-      var input = new[] {
-        "abcdef",
-        "bababc",
-        "abbcde",
-        "abcccd",
-        "aabcdd",
-        "abcdee",
-        "ababab"
-      };
+      var input = new[] { "abcdef", "bababc", "abbcde", "abcccd", "aabcdd", "abcdee", "ababab" };
 
       const int Expected = 12;
       var actual = DayTwo.Checksum(input);

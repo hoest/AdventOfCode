@@ -1,8 +1,3 @@
-﻿using System;
-
-namespace AdventOfCode.Year2019
-{
-  public class DayOne
-  {
-  }
+﻿namespace AdventOfCode.Year2019 {
+  public class DayOne { }
 }
