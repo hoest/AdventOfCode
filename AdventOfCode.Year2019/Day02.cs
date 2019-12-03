@@ -23,24 +23,40 @@
       input[1] = 12;
       input[2] = 2;
 
-      var solution = Process(string.Join(",", input));
-      Console.WriteLine($@"D2P1: {solution}");
+      var solution = Process(input);
+      Console.WriteLine($@"D2P1: {solution[0]}");
     }
 
     /// <inheritdoc />
     public void PartTwo() {
-      throw new NotImplementedException();
+      for (var noun = 0; noun < 99; noun++) {
+        for (var verb = 0; verb < 99; verb++) {
+          var input = InputFiles.day_02_01.SplitCsvAsInt();
+          input[1] = noun;
+          input[2] = verb;
+
+          var solution = Process(input);
+
+          if (solution[0] != 19690720) {
+            continue;
+          }
+
+          Console.WriteLine($@"D2P2: {noun}{verb}");
+          break;
+        }
+      }
     }
 
     /// <summary>
     /// Process method
     /// </summary>
-    public static string Process(string codeString) {
-      var codes = codeString.SplitCsvAsInt();
+    public static int[] Process(int[] input) {
+      var codes = new int[input.Length];
+      Array.Copy(input, codes, input.Length);
       for (var i = 0; i < codes.Length; i += 4) {
         var opCode = (OpCode)codes[i];
         if (opCode == OpCode.Finished) {
-          return string.Join(",", codes);
+          return codes;
         }
 
         var pos1 = codes[i + 1];
@@ -54,7 +70,7 @@
         };
       }
 
-      return string.Join(",", codes);
+      return codes;
     }
 
     private static string HandleOpcode(IEnumerable<int> take) {
