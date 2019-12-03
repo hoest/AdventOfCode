@@ -13,5 +13,12 @@
     public static IEnumerable<int> SplitLinesAsInt(this string s) {
       return s.Split(new[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
     }
+
+    /// <summary>
+    /// Split a CSV string with ',' and convert to int[]
+    /// </summary>
+    public static int[] SplitCsvAsInt(this string s) {
+      return s.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+    }
   }
 }
