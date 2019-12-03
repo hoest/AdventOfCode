@@ -4,6 +4,9 @@
     using System.Linq;
     using System.Reflection;
 
+    /// <summary>
+    /// Programm class
+    /// </summary>
     internal class Program {
       private static void Main(string[] args) {
         var instances = Assembly.GetExecutingAssembly()
