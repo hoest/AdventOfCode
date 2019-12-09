@@ -18,19 +18,31 @@
 
     /// <inheritdoc />
     public void PartTwo() {
-      var solution = "?";
-      Console.WriteLine($@"D3P1: {solution}");
+      var lines = InputFiles.day_03_01.SplitLines().ToArray();
+      var solution = NumberOfSteps(lines[0].Split(','), lines[1].Split(','));
+      Console.WriteLine($@"D3P2: {solution}");
     }
 
     /// <summary>
     /// </summary>
     public static int Distance(IEnumerable<string> line1, IEnumerable<string> line2) {
-      var crossings = DrawPath(line1).Intersect(DrawPath(line2));
-      return crossings.Skip(1).Select(point => Math.Abs(point.X) + Math.Abs(point.Y)).Min();
+      var crossings = Crossings(line1, line2);
+      return crossings.Select(point => Math.Abs(point.X) + Math.Abs(point.Y)).Min();
     }
 
     /// <summary>
     /// </summary>
+    public static int NumberOfSteps(IEnumerable<string> line1, IEnumerable<string> line2) {
+      var l1 = DrawPath(line1).ToArray();
+      var l2 = DrawPath(line2).ToArray();
+      var crossings = l1.Intersect(l2).Skip(1);
+      return crossings.Select(point => Array.IndexOf(l1, point) + Array.IndexOf(l2, point)).Min();
+    }
+
+    private static IEnumerable<Point> Crossings(IEnumerable<string> line1, IEnumerable<string> line2) {
+      return DrawPath(line1).Intersect(DrawPath(line2)).Skip(1);
+    }
+
     private static IEnumerable<Point> DrawPath(IEnumerable<string> steps) {
       var result = new List<Point> { new Point(0, 0) };
       foreach (var step in steps) {
@@ -40,8 +52,6 @@
       return result;
     }
 
-    /// <summary>
-    /// </summary>
     private static IEnumerable<Point> DrawLine(string step, Point previous) {
       var result = new List<Point>();
       var direction = step[0] switch {
