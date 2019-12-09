@@ -47,7 +47,7 @@
     /// Method to calculate the sthe fuel requirements
     /// </summary>
     public static int FuelRequired(int mass) {
-      return Convert.ToInt32(Math.Floor(mass / 3.0) - 2);
+      return mass / 3 - 2;
     }
   }
 }
