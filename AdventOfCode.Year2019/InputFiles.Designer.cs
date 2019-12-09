@@ -157,5 +157,14 @@ namespace AdventOfCode.Year2019 {
                 return ResourceManager.GetString("day_02_01", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R998,U547,L703,D251,L776,U837,R100,U240,R197,D216,L220,U606,L437,U56,R940,U800,L968,D464,L870,D797,L545,D824,R790,U5,R347,D794,R204,U538,L247,U385,L103,D260,L590,U813,L549,U309,L550,U321,R862,D686,R368,D991,R451,D836,R264,D138,L292,D319,L784,D369,R849,U865,R776,D726,R223,D118,L790,D208,L836,D592,R310,D36,R991,U674,L205,U407,R422,U350,L126,D320,L239,U353,L509,U48,R521,D544,L157,D551,R614,D493,R407,D965,R498,U248,R826,U573,L782,D589,R616,D992,L806,D745,R28,U142,L333,D849,L858,D617,R167,U341,R46,U940,L615,D997 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string day_03_01 {
+            get {
+                return ResourceManager.GetString("day_03_01", resourceCulture);
+            }
+        }
     }
 }

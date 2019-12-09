@@ -8,10 +8,17 @@
   /// </summary>
   public static class StringExtensions {
     /// <summary>
+    /// Split a string in lines
+    /// </summary>
+    public static IEnumerable<string> SplitLines(this string s) {
+      return s.Split(new[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    /// <summary>
     /// Split a string in lines and convert to integers
     /// </summary>
     public static IEnumerable<int> SplitLinesAsInt(this string s) {
-      return s.Split(new[] { Environment.NewLine, "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse);
+      return s.SplitLines().Select(int.Parse);
     }
 
     /// <summary>
