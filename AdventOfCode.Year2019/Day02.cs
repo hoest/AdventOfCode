@@ -29,9 +29,9 @@
 
     /// <inheritdoc />
     public void PartTwo() {
+      var input = InputFiles.day_02_01.SplitCsvAsInt();
       for (var noun = 0; noun < 99; noun++) {
         for (var verb = 0; verb < 99; verb++) {
-          var input = InputFiles.day_02_01.SplitCsvAsInt();
           input[1] = noun;
           input[2] = verb;
 
