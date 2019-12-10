@@ -9,7 +9,7 @@ namespace AdventOfCode.Year2018.Test {
     public void Solution() {
       const string Expected = "ivjhcadokeltwgsfsmqwrbnuy";
 
-      var input = Resources.InputD2P1.Split(Environment.NewLine).ToArray();
+      var input = Resources.InputD2P1.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToArray();
       var actual = DayTwo.CommonLetters(input);
 
       Assert.Equal(Expected, actual);
