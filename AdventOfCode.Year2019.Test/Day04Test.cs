@@ -19,7 +19,7 @@
     [InlineData(135679, true)]
     [InlineData(223450, false)]
     public void IsIncreasing_Test(int input, bool expected) {
-      Assert.Equal(expected, Day04.IsIncreasing(input));
+      Assert.Equal(expected, Day04.IsIncreasing(input.AsReadOnlyList()));
     }
 
     [Theory]
@@ -29,21 +29,22 @@
     [InlineData(135679, false)]
     [InlineData(223450, true)]
     public void HasAdjacentDigits_Test(int input, bool expected) {
-      Assert.Equal(expected, Day04.HasAdjacentDigits(input));
+      Assert.Equal(expected, Day04.HasAdjacentDigits(input.AsReadOnlyList()));
+    }
+
+    [Theory]
+    [InlineData(112233, true)]
+    [InlineData(123444, false)]
+    [InlineData(111122, true)]
+    public void HasDoubleAdjacentDigits_Test(int input, bool expected) {
+      Assert.Equal(expected, Day04.HasDoubleAdjacentDigits(input.AsReadOnlyList()));
     }
 
     [Theory]
     [InlineData(1234, false)]
     [InlineData(123456, true)]
     public void HasCorrectLength_Test(int input, bool expected) {
-      Assert.Equal(expected, Day04.HasCorrectLength(input));
-    }
-
-    [Theory]
-    [InlineData(0, 0, 0)]
-    [InlineData(111_111, 111_112, 2)]
-    public void NumberOfValidPasswords_Test(int from, int to, int numberOfPasswords) {
-      Assert.Equal(numberOfPasswords, Day04.NumberOfValidPasswords(from, to));
+      Assert.Equal(expected, Day04.HasCorrectLength(input.AsReadOnlyList()));
     }
   }
 }
