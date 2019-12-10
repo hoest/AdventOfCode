@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Year2019.Test {
   using Xunit;
 
-  public class DayTwoTest {
+  public class Day02Test {
     [Fact]
     public void Process_Test() {
       Assert.Equal(new[] { 2, 0, 0, 0, 99 }, Day02.Process(new[] { 1, 0, 0, 0, 99 }));

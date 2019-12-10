@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Year2019.Test {
   using Xunit;
 
-  public class DayThreeTest {
+  public class Day03Test {
     [Theory]
     [InlineData(new[] { "R8", "U5", "L5", "D3" }, new[] { "U7", "R6", "D4", "L4" }, 6)]
     [InlineData(

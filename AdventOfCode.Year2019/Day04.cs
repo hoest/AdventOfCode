@@ -24,6 +24,10 @@
     /// </summary>
     public static int NumberOfValidPasswords(int from, int to) {
       var list = new List<int>();
+      if (from >= to) {
+        return 0;
+      }
+
       for (var i = from; i <= to; i++) {
         if (HasCorrectLength(i) && IsIncreasing(i) && HasAdjacentDigits(i)) {
           list.Add(i);

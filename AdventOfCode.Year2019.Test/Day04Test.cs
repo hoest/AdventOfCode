@@ -3,7 +3,7 @@
 
   using Xunit;
 
-  public class DayFourTest {
+  public class Day04Test {
     [Theory]
     [InlineData(123456, new[] { 1, 2, 3, 4, 5, 6 })]
     [InlineData(654321, new[] { 6, 5, 4, 3, 2, 1 })]

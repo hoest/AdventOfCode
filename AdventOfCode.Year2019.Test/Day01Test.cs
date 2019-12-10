@@ -1,7 +1,7 @@
 namespace AdventOfCode.Year2019.Test {
   using Xunit;
 
-  public class DayOneTest {
+  public class Day01Test {
     [Fact]
     public void FuelRequired_Test() {
       Assert.Equal(2, Day01.FuelRequired(12));
